@@ -1,18 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    int num1, num2;
+/**
+ * argv[1] - number 1
+ * argv[2] - number 2
+*/
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Usage: %s <number 1> <number 2>\n", argv[0]);
+        return 0;
+    }
 
-    // Prompt the user for input
-    printf("Enter the first number: ");
-    scanf("%d", &num1);
+    int num1 = atoi(argv[1]);
+    int num2 = atoi(argv[2]);
 
-    printf("Enter the second number: ");
-    scanf("%d", &num2);
+    if (num1 < 1 || num2 < 1) {
+        printf("Error: both numbers must be integers greater than 0\n");
+        return 1;
+    }
 
-    // Calculate and print the sum
-    int sum = num1 + num2;
-    printf("Sum: %d\n", sum);
-
+    printf("Sum: %d\n", num1 + num2); 
     return 0; // Exit successfully
 }

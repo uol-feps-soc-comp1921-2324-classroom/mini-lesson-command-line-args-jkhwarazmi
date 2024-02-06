@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     if (argc != 3)
     {
-        printf("Usage: wlk <name>\n");
+        printf("Usage: wlk <name> <age>\n");
         return 0;
     }
 
